@@ -1,41 +1,25 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ProductPromo v3</title><link rel="stylesheet" href="style.css"></head><body>
-<header><b>▶ ProductPromo <i>v4</i></b><div><button id="toggleEditor">☰ Editor</button><button id="fullscreen">⛶ Fullscreen</button></div></header>
-<div class="app">
-<aside id="editor">
-<label>ชื่อสินค้า<input id="name" value="หูฟังไร้สาย ANC X1"></label>
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ProductPromo V5</title><link rel="stylesheet" href="style.css"></head><body>
+<header><b>▶ ProductPromo <i>V5</i></b><button id="toggle">☰ Editor</button></header>
+<div class="app"><aside id="editor">
+<label>ชื่อสินค้า<input id="name" value="ไมโครโฟนคอนเดนเซอร์สำหรับสตรีมและเล่นเกม"></label>
 <div class="row"><label>ราคา<input id="price" value="890"></label><label>ราคาเดิม<input id="old" value="1290"></label></div>
-<label>คำโปรย<input id="tag" value="เสียงชัด เบสแน่น ใส่สบาย"></label>
-<label>จุดเด่น<textarea id="features">ตัดเสียงรบกวน ANC\nแบตเตอรี่ 30 ชั่วโมง\nกันน้ำ IPX5\nน้ำหนักเบา</textarea></label>
-<label>วิธีใช้<textarea id="use">เปิดกล่อง → เชื่อมต่อ Bluetooth → พร้อมใช้งาน</textarea></label>
-<label>ข้อควรรู้<textarea id="note">หลีกเลี่ยงการแช่น้ำ และใช้อุปกรณ์ชาร์จที่เหมาะสม</textarea></label>
-<div class="box"><b>รูปสินค้า สูงสุด 10 รูป</b><input id="pics" type="file" accept="image/*" multiple><div id="thumbs"></div><small id="picCount">0 / 10</small></div>
-<div class="box"><b>เพลงประกอบ</b><input id="music" type="file" accept="audio/*"><small id="musicName">ยังไม่ได้เลือก</small></div>
-<div class="row"><label>เวลาต่อภาพ<select id="duration"><option value="3">3 วิ</option><option value="4" selected>4 วิ</option><option value="5">5 วิ</option></select></label><label>สไตล์<select id="theme"><option value="warm">Modern</option><option value="tech">Tech</option><option value="luxury">Luxury</option></select></label></div>
-<button class="primary" id="build">✨ สร้างโปรโมท</button>
-</aside>
-<main>
-<div id="capture"><div class="stage warm" id="stage"><div id="slides"></div><div class="bars" id="bars"></div></div></div>
-<nav><button id="prev">⏮</button><button id="play">▶ เล่น</button><button id="next">⏭</button><span id="count"></span><button id="mute">🔊</button></nav>
-<div class="actions"><button id="export" class="primary">🎬 Render Video</button><button id="fs2">⛶ ดูเต็มจอ</button></div>
-<div class="exportPanel">
-  <div class="exportTop"><b id="status">พร้อม Render</b><span id="eta">—</span></div>
-  <div class="progressTrack"><i id="renderBar"></i></div>
-  <div class="exportMeta"><span id="renderStep">ยังไม่ได้เริ่ม</span><span id="codecInfo">กำลังตรวจ codec…</span></div>
-  <div class="quality">
-    <label>คุณภาพ
-      <select id="quality">
-        <option value="360">360×640 • เร็ว</option>
-        <option value="540" selected>540×960 • แนะนำ</option>
-        <option value="720">720×1280 • คม</option>
-      </select>
-    </label>
-  </div>
-  <div class="renderActions">
-    <button id="cancelExport" disabled>✕ ยกเลิก</button>
-    <button id="previewExport" disabled>▶ ดูวิดีโอ</button>
-    <button id="downloadExport" class="primary" disabled>⬇ ดาวน์โหลด</button>
-  </div>
-  <video id="resultVideo" controls playsinline hidden></video>
-</div>
-<div id="timeline"></div>
+<label>คำโปรย<input id="tag" value="เสียงชัด ใช้งานง่าย เหมาะกับสตรีมและประชุม"></label>
+<label>จุดเด่น<textarea id="features">รับเสียงคมชัด
+เชื่อมต่อง่าย
+ปรับระดับเสียงได้
+เหมาะกับเกมและประชุม</textarea></label>
+<label>วิธีใช้<textarea id="use">เสียบสาย → เลือกไมโครโฟนในอุปกรณ์ → ปรับระดับเสียง → พร้อมใช้งาน</textarea></label>
+<label>ข้อควรรู้<textarea id="note">จัดตำแหน่งไมค์ให้เหมาะสมและหลีกเลี่ยงเสียงรบกวนรอบข้าง</textarea></label>
+<div class="box"><b>รูป สูงสุด 10 รูป</b><input id="pics" type="file" accept="image/*" multiple><div id="thumbs"></div><small id="picCount">0 / 10</small></div>
+<div class="box"><b>เพลงประกอบ</b><input id="music" type="file" accept="audio/*"><small id="musicName">ยังไม่ได้เลือกเพลง</small></div>
+<div class="row"><label>ความยาวรวม<select id="total"><option value="15">15 วินาที</option><option value="30" selected>30 วินาที</option><option value="60">60 วินาที</option></select></label><label>คุณภาพ<select id="quality"><option value="360">360×640</option><option value="540" selected>540×960</option><option value="720">720×1280</option></select></label></div>
+<button id="build" class="primary">✨ สร้างโปรโมท</button></aside>
+<main><div id="stage"><div id="slides"></div><div id="bars"></div></div>
+<nav><button id="prev">⏮</button><button id="play">▶ เล่น</button><button id="next">⏭</button><span id="count"></span></nav>
+<section class="export"><h3>🎬 Social Export</h3><p id="support">กำลังตรวจรูปแบบวิดีโอ…</p>
+<button id="render" class="primary">Render</button><button id="cancel" disabled>ยกเลิก</button>
+<div class="track"><i id="progress"></i></div><div class="meta"><span id="status">พร้อม</span><span id="eta">—</span></div>
+<video id="result" controls playsinline hidden></video>
+<div class="download"><button id="download" disabled>⬇ ดาวน์โหลดวิดีโอ</button></div>
+<p class="note">V5 จะไม่เรียกไฟล์ว่า MP4 ถ้า browser ไม่สามารถสร้าง MP4 ได้จริง ถ้าเครื่องรองรับเฉพาะ WebM ระบบจะแจ้งตรง ๆ แทน</p></section>
 </main></div><audio id="audio"></audio><script src="app.js"></script></body></html>
