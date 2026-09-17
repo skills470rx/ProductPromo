@@ -1,5 +1,5 @@
 <!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ProductPromo v3</title><link rel="stylesheet" href="style.css"></head><body>
-<header><b>▶ ProductPromo <i>v3</i></b><div><button id="toggleEditor">☰ Editor</button><button id="fullscreen">⛶ Fullscreen</button></div></header>
+<header><b>▶ ProductPromo <i>v4</i></b><div><button id="toggleEditor">☰ Editor</button><button id="fullscreen">⛶ Fullscreen</button></div></header>
 <div class="app">
 <aside id="editor">
 <label>ชื่อสินค้า<input id="name" value="หูฟังไร้สาย ANC X1"></label>
@@ -16,7 +16,26 @@
 <main>
 <div id="capture"><div class="stage warm" id="stage"><div id="slides"></div><div class="bars" id="bars"></div></div></div>
 <nav><button id="prev">⏮</button><button id="play">▶ เล่น</button><button id="next">⏭</button><span id="count"></span><button id="mute">🔊</button></nav>
-<div class="actions"><button id="export" class="primary">⬇ Export Video</button><button id="fs2">⛶ ดูเต็มจอ</button></div>
-<div class="status" id="status">พร้อมสร้างวิดีโอ • Export เป็น WebM จากเบราว์เซอร์</div>
+<div class="actions"><button id="export" class="primary">🎬 Render Video</button><button id="fs2">⛶ ดูเต็มจอ</button></div>
+<div class="exportPanel">
+  <div class="exportTop"><b id="status">พร้อม Render</b><span id="eta">—</span></div>
+  <div class="progressTrack"><i id="renderBar"></i></div>
+  <div class="exportMeta"><span id="renderStep">ยังไม่ได้เริ่ม</span><span id="codecInfo">กำลังตรวจ codec…</span></div>
+  <div class="quality">
+    <label>คุณภาพ
+      <select id="quality">
+        <option value="360">360×640 • เร็ว</option>
+        <option value="540" selected>540×960 • แนะนำ</option>
+        <option value="720">720×1280 • คม</option>
+      </select>
+    </label>
+  </div>
+  <div class="renderActions">
+    <button id="cancelExport" disabled>✕ ยกเลิก</button>
+    <button id="previewExport" disabled>▶ ดูวิดีโอ</button>
+    <button id="downloadExport" class="primary" disabled>⬇ ดาวน์โหลด</button>
+  </div>
+  <video id="resultVideo" controls playsinline hidden></video>
+</div>
 <div id="timeline"></div>
 </main></div><audio id="audio"></audio><script src="app.js"></script></body></html>

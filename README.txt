@@ -1,8 +1,9 @@
-ProductPromo v3
-1. เปิด index.html ใน Chrome/Edge
-2. อัปโหลดรูปสูงสุด 10 รูปและเพลง
-3. กดสร้างโปรโมท
-4. Fullscreen สำหรับดูตัวอย่าง
-5. Export Video สร้างไฟล์ WebM ใน browser
-
-หมายเหตุ: Export ใช้ Canvas + MediaRecorder ไม่ใช้ AI/API และความสามารถด้านเสียงขึ้นกับ browser
+ProductPromo v4
+- Render progress + เวลาโดยประมาณ
+- Cancel render
+- Preview วิดีโอหลัง render
+- ดาวน์โหลดด้วยตัวเอง ไม่ดาวน์โหลดอัตโนมัติ
+- ตรวจ format ที่ MediaRecorder ของ browser รองรับ (MP4 ถ้ารองรับ มิฉะนั้น WebM)
+- คุณภาพ 360x640 / 540x960 / 720x1280
+- รูปสูงสุด 10 รูป + เพลง
+หมายเหตุ: การรองรับ MP4/H.264 และ audio track แตกต่างกันตาม browser/device
